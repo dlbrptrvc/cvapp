@@ -10,7 +10,7 @@ export function App() {
 	return (
 		<>
 			<div>
-				<Card props={PIinput}></Card>
+				<Card label={PIinput.label} inputs={PIinput.inputs}></Card>
 			</div>
 			<Display />
 		</>
