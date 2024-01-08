@@ -1,6 +1,4 @@
-.card {
-	background-color: white;
-	color: black;
-	border-radius: 25px;
-	padding: 20px;
+.editor {
+	align-self: center;
+	margin-left: 15%;
 }

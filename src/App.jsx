@@ -5,12 +5,29 @@ import { Card } from './Card';
 export function App() {
 	const PIinput = {
 		label: 'Personal Information',
-		inputs: ['Name', 'Adress', 'Email', 'Phone'],
+		inputs: [
+			['Name', 'input'],
+			['Address', 'input'],
+			['Email', 'input'],
+			['Phone', 'input'],
+		],
+		count: 0,
+	};
+	const EDUinput = {
+		label: 'Education',
+		inputs: [
+			['School', 'input'],
+			['Location', 'input'],
+			['Date', 'input'],
+			['Degree', 'input'],
+		],
+		count: 1,
 	};
 	return (
 		<>
-			<div>
-				<Card label={PIinput.label} inputs={PIinput.inputs}></Card>
+			<div className='editor'>
+				<Card props={PIinput}></Card>
+				<Card props={EDUinput}></Card>
 			</div>
 			<Display />
 		</>
