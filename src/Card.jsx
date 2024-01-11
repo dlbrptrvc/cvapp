@@ -1,38 +1,19 @@
 import './Card.css';
 
 export function Card({ props }) {
+	console.log(props);
 	return (
 		<div className='card'>
 			<div className='title'>
-				<h3>{props.label}</h3>
+				<h3>{props}</h3>
 				<button
 					className='arrowBtn'
 					data-open='opened'
 					onClick={toggleView}
 				></button>
 			</div>
-
-			<form>
-				{props.inputs.map((item) => {
-					return (
-						<div key={item[0]} className='input'>
-							<label>{item[0]}</label>
-							{item[1] == 'input' ? (
-								<input data-target={item[0]} onInput={updateText}></input>
-							) : (
-								<textarea data-target={item[0]} onInput={updateText}></textarea>
-							)}
-						</div>
-					);
-				})}
-			</form>
 		</div>
 	);
-}
-
-function updateText(e) {
-	let target = document.querySelector('[id="' + e.target.dataset.target + '"]');
-	target.textContent = e.target.value;
 }
 
 function toggleView(e) {

@@ -2,3 +2,12 @@
 	align-self: center;
 	margin-left: 15%;
 }
+
+.page {
+	width: 600px;
+	height: 800px;
+	background-color: white;
+	color: black;
+	align-self: center;
+	justify-self: center;
+}

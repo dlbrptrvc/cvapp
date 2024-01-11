@@ -1,35 +1,32 @@
 import './App.css';
-import { Display } from './Display';
 import { Card } from './Card';
+import { Form } from './Form';
+import { Buttons } from './Buttons';
+import { Info } from './Info';
+import { Education } from './Education';
+import { useState } from 'react';
+
+const [EDUcount, setEDUcount] = useState(0);
 
 export function App() {
-	const PIinput = {
-		label: 'Personal Information',
-		inputs: [
-			['Name', 'input'],
-			['Address', 'input'],
-			['Email', 'input'],
-			['Phone', 'input'],
-		],
-		count: 0,
-	};
-	const EDUinput = {
-		label: 'Education',
-		inputs: [
-			['School', 'input'],
-			['Location', 'input'],
-			['Date', 'input'],
-			['Degree', 'input'],
-		],
-		count: 1,
-	};
 	return (
 		<>
 			<div className='editor'>
-				<Card props={PIinput}></Card>
-				<Card props={EDUinput}></Card>
+				<Card props={'Personal Information'}>
+					<Form props={['Name', 'Adress', 'Phone', 'Email']}></Form>
+				</Card>
+				<Card props={'Education'}>
+					<Form
+						props={['School', 'Date', 'Location', 'Degree']}
+						count={EDUcount}
+					></Form>
+					<Buttons props={EDUcount}></Buttons>
+				</Card>
 			</div>
-			<Display />
+			<div className='page'>
+				<Info></Info>
+				<Education props={EDUcount}></Education>
+			</div>
 		</>
 	);
 }
