@@ -6,21 +6,33 @@ import { Info } from './Info';
 import { Education } from './Education';
 import { useState } from 'react';
 
-const [EDUcount, setEDUcount] = useState(0);
-
 export function App() {
+	const [EDUcount, setEDUcount] = useState(0);
+
+	function handleAddEDU() {
+		setEDUcount(EDUcount + 1);
+	}
+
+	function handleRemoveEDU() {
+		if (EDUcount > 0) {
+			setEDUcount(EDUcount - 1);
+		}
+	}
 	return (
 		<>
 			<div className='editor'>
-				<Card props={'Personal Information'}>
-					<Form props={['Name', 'Adress', 'Phone', 'Email']}></Form>
+				<Card label={'Personal Information'}>
+					<Form inputs={['Name', 'Address', 'Phone', 'Email']} count={0}></Form>
 				</Card>
-				<Card props={'Education'}>
+				<Card label={'Education'}>
 					<Form
-						props={['School', 'Date', 'Location', 'Degree']}
+						inputs={['School', 'City', 'Attended', 'Degree']}
 						count={EDUcount}
 					></Form>
-					<Buttons props={EDUcount}></Buttons>
+					<div className='buttons'>
+						<button onClick={handleAddEDU}>Add</button>
+						<button onClick={handleRemoveEDU}>Remove</button>
+					</div>
 				</Card>
 			</div>
 			<div className='page'>

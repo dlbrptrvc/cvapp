@@ -1,1 +1,6 @@
-export function Buttons({ props }) {}
+export function Buttons({ props }) {
+	console.log(props);
+	return (
+
+	);
+}
