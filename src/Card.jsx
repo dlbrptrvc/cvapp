@@ -36,7 +36,7 @@ function toggleView(e) {
 		if (e.target.dataset.open == 'closed') {
 			elem.style.display = 'none';
 		} else {
-			elem.style.display = 'block';
+			elem.style.display = 'flex';
 		}
 	});
 }

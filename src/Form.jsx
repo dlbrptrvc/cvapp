@@ -27,5 +27,6 @@ function Inputs(props) {
 }
 
 function updateTaget(e) {
-	console.log(e.target.dataset.target);
+	let target = document.getElementById(e.target.dataset.target);
+	target.textContent = e.target.value;
 }
