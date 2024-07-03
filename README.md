@@ -40,3 +40,5 @@ Contributions are welcome! Please follow these steps to contribute:
 - **Icons:** Used under Creative Commons License.
 
 ## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
